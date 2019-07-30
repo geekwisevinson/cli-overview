@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, Input} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, Input, OnDestroy} from '@angular/core';
 
 @Component({
   selector: 'geekwise-dash',
@@ -7,7 +7,7 @@ import {Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, ChangeDet
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DashComponent implements OnInit {
+export class DashComponent implements OnInit, OnDestroy {
   @Input() public someProp;
   public title = 'Dash';
   constructor(private cd: ChangeDetectorRef) { }
@@ -17,6 +17,9 @@ export class DashComponent implements OnInit {
       this.title = 'Something different';
       this.cd.detectChanges();
     }, 3000);
+  }
+  ngOnDestroy(): void {
+    this.cd.detach();
   }
 
   public updateBGC() {

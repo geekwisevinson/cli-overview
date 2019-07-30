@@ -1,4 +1,5 @@
 import {Directive, ElementRef, HostBinding, HostListener, Input} from '@angular/core';
+import {Test} from '../enums/test.enum';
 
 @Directive({
   selector: '[geekwiseAlerter]'
@@ -16,7 +17,7 @@ export class AlerterDirective {
   }
 
   public blink() {
-    console.log(this.geekwiseAlerter);
+    console.log(Test.red);
     if (this.el.nativeElement.style.color === 'transparent') {
       this.el.nativeElement.style.color = this.geekwiseAlerter;
     } else {
