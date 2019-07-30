@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  public title = 'Home';
+
   constructor() { }
 
   ngOnInit() {
+
+    setTimeout( () => {
+      this.title = 'Something different';
+    }, 3000);
+  }
+
+  public updateBGC() {
+    console.log('updateBGC Home');
+    return {backgroundColor: 'green'};
   }
 
 }

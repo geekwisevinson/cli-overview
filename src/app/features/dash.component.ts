@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, Input} from '@angular/core';
 
 @Component({
   selector: 'geekwise-dash',
@@ -8,10 +8,20 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashComponent implements OnInit {
-
-  constructor() { }
+  @Input() public someProp;
+  public title = 'Dash';
+  constructor(private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
+    setTimeout( () => {
+      this.title = 'Something different';
+      this.cd.detectChanges();
+    }, 3000);
+  }
+
+  public updateBGC() {
+    console.log('updateBGC Dash');
+    return {backgroundColor: 'green'};
   }
 
 }
