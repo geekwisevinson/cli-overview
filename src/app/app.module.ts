@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './features/home/home.component';
 import { DashComponent } from './features/dash.component';
 import { AlerterDirective } from './directives/alerter.directive';
+import { ReversePipe } from './pipes/reverse.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DashComponent,
-    AlerterDirective
+    AlerterDirective,
+    ReversePipe
   ],
   imports: [
     BrowserModule,
