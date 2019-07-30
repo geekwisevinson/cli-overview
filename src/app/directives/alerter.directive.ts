@@ -17,7 +17,6 @@ export class AlerterDirective {
   }
 
   public blink() {
-    console.log(Test.red);
     if (this.el.nativeElement.style.color === 'transparent') {
       this.el.nativeElement.style.color = this.geekwiseAlerter;
     } else {

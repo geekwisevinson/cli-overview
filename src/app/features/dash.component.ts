@@ -25,7 +25,6 @@ export class DashComponent implements OnInit, OnDestroy {
   }
 
   public updateBGC() {
-    console.log('updateBGC Dash');
     return {backgroundColor: 'green'};
   }
   public createUser() {

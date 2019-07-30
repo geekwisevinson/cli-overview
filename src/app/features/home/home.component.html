@@ -1,2 +1,8 @@
 <p geekwiseAlerter="yellow"  [ngStyle]="updateBGC()">home works!</p>
-{{title}}
+<button (click)="backwards = !backwards">flip</button>
+
+<input type="text" [(ngModel)]="backwards">
+
+<div *ngFor="let animal of animals | reverse: backwards : false | reverse: backwards : false">
+{{animal }}
+</div>

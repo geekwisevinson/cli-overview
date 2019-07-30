@@ -7,6 +7,7 @@ import { HomeComponent } from './features/home/home.component';
 import { DashComponent } from './features/dash.component';
 import { AlerterDirective } from './directives/alerter.directive';
 import { ReversePipe } from './pipes/reverse.pipe';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ReversePipe } from './pipes/reverse.pipe';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

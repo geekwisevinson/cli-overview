@@ -6,7 +6,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ReversePipe implements PipeTransform {
 
   transform(value: any, ...args: any[]): any {
-    return null;
+    console.log(value);
+    let newValue = value.reverse().filter( val => val.includes(args[0]));
+    if (args[1]) {
+      newValue = newValue.reverse();
+    }
+    return newValue;
   }
 
 }

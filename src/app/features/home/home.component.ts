@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  public backwards = 'o';
+
+  public animals = [
+    'monkey',
+    'elephant',
+    'dog',
+    'cat',
+  ];
+
   public title = 'Home';
 
   constructor() { }
@@ -19,7 +28,6 @@ export class HomeComponent implements OnInit {
   }
 
   public updateBGC() {
-    console.log('updateBGC Home');
     return {backgroundColor: 'green'};
   }
 
