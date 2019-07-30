@@ -1,4 +1,5 @@
 import {Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, ChangeDetectorRef, Input, OnDestroy} from '@angular/core';
+import {User} from '../interfaces/user';
 
 @Component({
   selector: 'geekwise-dash',
@@ -10,6 +11,7 @@ import {Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, ChangeDet
 export class DashComponent implements OnInit, OnDestroy {
   @Input() public someProp;
   public title = 'Dash';
+  public user: User;
   constructor(private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
@@ -25,6 +27,18 @@ export class DashComponent implements OnInit, OnDestroy {
   public updateBGC() {
     console.log('updateBGC Dash');
     return {backgroundColor: 'green'};
+  }
+  public createUser() {
+    this.user = {
+      username: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      age: 32,
+      address: {
+        city: '', state: ''
+      }
+    };
   }
 
 }
